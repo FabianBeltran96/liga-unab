@@ -1,9 +1,11 @@
 package com.unab.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="matches")
@@ -43,7 +45,8 @@ public class MatchGame {
 
     @Getter
     @Setter
-    private String dateMatch;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date dateMatch;
 
     @Override
     public String toString() {
